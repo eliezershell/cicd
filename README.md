@@ -16,7 +16,7 @@ pipeline {
                 }
             }
         }
-        stage('Build and Deploy') {
+        stage('Build e Deploy') {
             steps {
                 sh '''
                 rm -rf /mnt/web-content/*
