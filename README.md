@@ -6,9 +6,6 @@ conteudo Jenksfile:
 ```
 pipeline {
     agent any
-    environment {
-        REPO_URL = https://github.com/eliezershell/nginx-content.git
-    }
     stages {
         stage('Preparando o Repositório') {
             steps {
