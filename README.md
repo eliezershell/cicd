@@ -1,7 +1,7 @@
-# cicd
+# CI/CD
 Instalação completa de um ambiente de CI/CD
 
-conteudo Jenksfile:
+conteúdo Jenksfile:
 
 ```
 pipeline {
