@@ -13,7 +13,7 @@ pipeline {
                     if (currentBuild.number == 1){
                         sh 'git clone https://github.com/eliezershell/nginx-content.git'   
                     } else {
-                        sh 'git pull https://github.com/eliezershell/nginx-content.git main'
+                        sh 'git -C ./nginx-content pull origin main'
                     }
                 }
             }
