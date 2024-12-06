@@ -6,10 +6,17 @@ conteudo Jenksfile:
 ```
 pipeline {
     agent any
+    environment {
+        REPO_URL = https://github.com/eliezershell/nginx-content.git
+    }
     stages {
-        stage('Pull Repository') {
+        stage('Preparando o Repositório') {
             steps {
-                sh 'git pull https://github.com/eliezershell/nginx-content.git main'
+                if (currentBuild.number == 1){
+                    sh 'git clone https://github.com/eliezershell/nginx-content.git'   
+                } else {
+                    sh 'git pull origin main'
+                }
             }
         }
         stage('Build and Deploy') {
