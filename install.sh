@@ -28,4 +28,10 @@ docker run --name jenkins-blueocean --restart=on-failure --detach \
   --volume jenkins-docker-certs:/certs/client:ro \
   --volume web-content:/mnt/web-content
   myjenkins-blueocean:2.479.2-1
+
+  #Instalando imagem nginx
+  docker run --name some-nginx -detach \
+  --publish 80:80 
+  --volume web-content:/usr/share/nginx/html
+  some-content-nginx
   
