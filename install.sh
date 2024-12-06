@@ -31,7 +31,7 @@ docker run --name jenkins-blueocean --restart=on-failure --detach \
 
   #Instalando imagem nginx
 docker run --name some-nginx --detach \
+  --network jenkins \
   --publish 80:80 \
   --volume web-content:/usr/share/nginx/html \
   nginx
-  
