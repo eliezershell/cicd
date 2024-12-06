@@ -3,7 +3,7 @@ Instalação completa de um ambiente de CI/CD
 
 conteudo Jenksfile:
 
-'''
+```
 pipeline {
     agent any
     stages {
@@ -22,4 +22,4 @@ pipeline {
         }
     }
 }
-'''
+```
