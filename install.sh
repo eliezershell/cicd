@@ -30,7 +30,7 @@ docker run --name jenkins-blueocean --restart=on-failure --detach \
   myjenkins-blueocean:2.479.2-1
 
   #Instalando imagem nginx
-docker run --name some-nginx -detach \
+docker run --name some-nginx --detach \
   --publish 80:80 \
   --volume web-content:/usr/share/nginx/html \
   nginx
