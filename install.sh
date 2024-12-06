@@ -17,10 +17,10 @@ docker network create jenkins
 #  --publish 2376:2376 \
 #  docker:dind --storage-driver overlay2
 
-  #COntruindo e instalando container Jenkins blue ocean
-  docker build -t myjenkins-blueocean:2.479.2-1 .
+#COntruindo e instalando container Jenkins blue ocean
+docker build -t myjenkins-blueocean:2.479.2-1 .
 
-  docker run --name jenkins-blueocean --restart=on-failure --detach \
+docker run --name jenkins-blueocean --restart=on-failure --detach \
   --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
   --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
   --publish 8080:8080 --publish 50000:50000 \
