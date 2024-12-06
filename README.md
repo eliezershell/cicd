@@ -9,10 +9,12 @@ pipeline {
     stages {
         stage('Preparando o Repositório') {
             steps {
-                if (currentBuild.number == 1){
-                    sh 'git clone https://github.com/eliezershell/nginx-content.git'   
-                } else {
-                    sh 'git pull origin main'
+                script {
+                    if (currentBuild.number == 7){
+                        sh 'git clone https://github.com/eliezershell/nginx-content.git'   
+                    } else {
+                        sh 'git pull origin main'
+                    }
                 }
             }
         }
