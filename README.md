@@ -1,6 +1,20 @@
 # CI/CD
 Instalação completa de um ambiente de CI/CD
 
+## Instalação
+
+Siga estas etapas para instalar o ambiente de CI/CD em seu serviidor:
+
+1. **Clone este repositório:**
+   ```
+   git clone https://github.com/eliezershell/cicd.git
+   ```
+
+2. **Execute o script de instalação:**
+   ```
+   cd cicd; chmod +x install.sh; ./install.sh
+   ```
+
 conteúdo Jenksfile:
 
 ```
