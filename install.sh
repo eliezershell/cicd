@@ -19,9 +19,9 @@ sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 # Adicionando usuário padrão ao grupo docker
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
+#sudo groupadd docker
+#sudo usermod -aG docker $USER
+#newgrp docker
 
 # Ativando o serviço para iniciar junto com o S.O.
 sudo systemctl enable docker.service
