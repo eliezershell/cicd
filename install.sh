@@ -18,21 +18,16 @@ sudo apt update
 # Instalando Docker e extensões necessárias
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
-# Adicionando usuário padrão ao grupo docker
-sudo groupadd docker
-sudo usermod -aG docker $USER
-#newgrp docker
-
 # Ativando o serviço para iniciar junto com o S.O.
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
 ### Instalação do Jenkins
 #criando rede docker
-docker network create jenkins
+sudo docker network create jenkins
 
 # Caso queira instalar container 'docker in docker' remover os comentarios do comando abaixo:
-#docker run --name jenkins-docker-dind --rm --detach \
+#sudo docker run --name jenkins-docker-dind --rm --detach \
 #  --privileged --network jenkins --network-alias docker \
 #  --env DOCKER_TLS_CERTDIR=/certs \
 #  --volume jenkins-docker-certs:/certs/client \
@@ -41,9 +36,9 @@ docker network create jenkins
 #  docker:dind --storage-driver overlay2
 
 #COntruindo e instalando container Jenkins blue ocean
-docker build -t myjenkins-blueocean:2.479.2-1 .
+sudo docker build -t myjenkins-blueocean:2.479.2-1 .
 
-docker run --name jenkins-blueocean --restart=on-failure --detach \
+sudo docker run --name jenkins-blueocean --restart=on-failure --detach \
   --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
   --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
   --publish 8080:8080 --publish 50000:50000 \
@@ -53,8 +48,12 @@ docker run --name jenkins-blueocean --restart=on-failure --detach \
   myjenkins-blueocean:2.479.2-1
 
   #Instalando imagem nginx
-docker run --name some-nginx --detach \
+sudo docker run --name some-nginx --detach \
   --network jenkins \
   --publish 80:80 \
   --volume web-content:/usr/share/nginx/html \
   nginx
+
+# Adicionando usuário padrão ao grupo docker
+sudo usermod -aG docker $USER
+newgrp docker
