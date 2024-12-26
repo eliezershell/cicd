@@ -48,7 +48,7 @@ sudo docker run --name jenkins-blueocean --restart=on-failure --detach \
   myjenkins-blueocean:2.479.2-1
 
   #Instalando imagem nginx
-sudo docker run --name some-nginx --detach \
+sudo docker run --name some-nginx --restart=on-failure --detach \
   --network jenkins \
   --publish 80:80 \
   --volume web-content:/usr/share/nginx/html \
