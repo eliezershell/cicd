@@ -36,16 +36,16 @@ sudo docker network create jenkins
 #  docker:dind --storage-driver overlay2
 
 #COntruindo e instalando container Jenkins blue ocean
-sudo docker build -t myjenkins-blueocean:2.479.2-1 .
+sudo docker build -t myjenkins:2.479.2-1 .
 
-sudo docker run --name jenkins-blueocean --restart=on-failure --detach \
+sudo docker run --name jenkins --restart=on-failure --detach \
   --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
   --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
   --publish 8080:8080 --publish 50000:50000 \
   --volume jenkins-data:/var/jenkins_home \
   --volume jenkins-docker-certs:/certs/client:ro \
   --volume web-content:/mnt/web-content \
-  myjenkins-blueocean:2.479.2-1
+  myjenkins:2.479.2-1
 
   #Instalando imagem nginx
 sudo docker run --name some-nginx --restart=on-failure --detach \
