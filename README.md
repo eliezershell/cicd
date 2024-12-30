@@ -43,3 +43,18 @@ pipeline {
     }
 }
 ```
+
+Conteúdo do Script na Pipeline:
+
+```
+#!/bin/bash
+
+if [ $BUILD_NUMBER == 1 ]; then
+git clone https://github.com/eliezershell/nginx-content.git
+else
+git -C ./nginx-content pull origin main
+fi
+
+rm -rf /mnt/web-content/*
+cp -r /var/jenkins_home/workspace/web-content/nginx-content/* /mnt/web-content
+```
