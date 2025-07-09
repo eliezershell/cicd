@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   jenkins:
-    build: .
+    image: jenkins/jenkins:lts-jdk17
     restart: on-failure
     ports:
       - "8080:8080"
