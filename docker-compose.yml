@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  jenkins:
+    build: .
+    restart: on-failure
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      - web-content:/mnt/web-content
+
+  nginx:
+    image: nginx:lts
+    restart: on-failure
+    ports: 
+      - "80:80"
+    volumes:
+      - web-content:/usr/share/nginx/html
+
+volumes:
+  jenkins-data:
+  web-content:
