@@ -16,7 +16,7 @@ Siga estas etapas para instalar o ambiente de CI/CD em seu serviidor:
    ```
 2. **Execute o script de inicialização do Docker Compose:**
    ```
-   docker-compose up -d
+   docker compose up -d
    ```
 
 conteúdo Jenksfile:
