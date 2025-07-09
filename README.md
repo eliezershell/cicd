@@ -7,7 +7,7 @@ Siga estas etapas para instalar o ambiente de CI/CD em seu serviidor:
 
 1. **Clone este repositório:**
    ```
-   git clone https://github.com/eliezershell/cicd.git
+   git clone https://github.com/eliezershell/cicd.git -b docker-compose
    ```
 
 2. **Execute o script de instalação do Docker:**
