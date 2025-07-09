@@ -10,9 +10,13 @@ Siga estas etapas para instalar o ambiente de CI/CD em seu serviidor:
    git clone https://github.com/eliezershell/cicd.git
    ```
 
-2. **Execute o script de instalação:**
+2. **Execute o script de instalação do Docker:**
    ```
    cd cicd; chmod +x install.sh; ./install.sh
+   ```
+2. **Execute o script de inicialização do Docker Compose:**
+   ```
+   docker-compose up -d
    ```
 
 conteúdo Jenksfile:
