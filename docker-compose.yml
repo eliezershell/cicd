@@ -12,7 +12,7 @@ services:
       - web-content:/mnt/web-content
 
   nginx:
-    image: nginx:lts
+    image: nginx
     restart: on-failure
     ports: 
       - "80:80"
