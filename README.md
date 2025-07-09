@@ -12,7 +12,7 @@ Siga estas etapas para instalar o ambiente de CI/CD em seu serviidor:
 
 2. **Execute o script de instalação do Docker:**
    ```
-   cd cicd; chmod +x install.sh; ./install.sh
+   cd cicd; chmod +x install_docker.sh; ./install_docker.sh
    ```
 2. **Execute o script de inicialização do Docker Compose:**
    ```
