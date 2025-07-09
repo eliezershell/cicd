@@ -15,7 +15,7 @@ echo \
 sudo apt update
 
 # Instalando Docker e extensões necessárias
-sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose -y
 
 # Ativando o serviço para iniciar junto com o S.O.
 sudo systemctl enable docker.service
