@@ -1,4 +1,4 @@
-## 📦 Projeto de CI/CD com Jenkins + GitHub + NGINX via Docker Compose
+## 📦 Projeto de CI/CD com Jenkins + GitHub + Nginx via Docker Compose
 
 ### 🛠️ Pré-requisitos
 - Docker e Docker Compose instalados. Para instalar rapidamente, execute:
@@ -15,7 +15,7 @@
 
 ### 🌐 Acesse os serviços:
 - Jenkins: [http://localhost:8080](http://localhost:8080)
-- NGINX: [http://localhost](http://localhost)
+- Nginx: [http://localhost](http://localhost)
 
 ----
 
