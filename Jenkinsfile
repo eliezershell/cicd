@@ -25,7 +25,10 @@ pipeline {
         }
         stage('Build e Deploy') {
             steps {
-                sh 'docker compose --no-cache --build -f /cicd/docker-compose.yml up -d --no-deps nginx'
+                sh '''
+		   docker compose -f /cicd/docker-compose.yml build --no-cache nginx
+		   docker compose -f /cicd/docker-compose.yml up -d --no-deps nginx
+		'''
             }
         }
     }
