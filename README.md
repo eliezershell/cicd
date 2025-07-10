@@ -1,7 +1,7 @@
 ## 📦 Projeto de CI/CD com Jenkins + GitHub + Nginx via Docker Compose
 
 ### 🛠️ Pré-requisitos
-- Docker e Docker Compose instalados. Para instalar rapidamente, execute:
+- Docker e Docker Compose instalados. Para instalar, execute:
   ```bash
   chmod +x install_docker.sh
   ./install_docker.sh
