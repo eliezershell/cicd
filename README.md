@@ -17,7 +17,7 @@
 - Jenkins: [http://localhost:8080](http://localhost:8080)
 - Nginx: [http://localhost](http://localhost)
 
---
+---
 
 ⚠️ Observações importantes
 - A Instrução COPY em nginx/Dockerfile deve estar **COMENTADA na execução inicial dos containers**, mas deve ser **DESCOMENTADA quando for executada as builds da pipeline**.
