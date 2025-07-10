@@ -15,5 +15,5 @@ Siga estas etapas para instalar o ambiente de CI/CD em seu servidor:
    ```
 3. **Execute o script de inicialização do Docker Compose:**
    ```
-   sudo docker compose up -d
+   cd cicd; sudo docker compose up -d
    ```
