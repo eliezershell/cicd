@@ -7,7 +7,7 @@ services:
       - "50000:50000"
     volumes:
       - jenkins-data:/var/jenkins_home
-      - /home/ubuntu/cicd/nginx/nginx-content:/var/lib/docker/volumes/cicd_jenkins-data/_data/workspace/web-content/nginx-content
+      - /home/ubuntu/cicd/nginx/nginx-content:/nginx-content
       - /home/ubuntu/cicd:/cicd
       - /var/run/docker.sock:/var/run/docker.sock
 
