@@ -1,22 +1,20 @@
 services:
   jenkins:
-    image: jenkins/jenkins:lts-jdk17
+    build: ./jenkins
     restart: on-failure
     ports:
       - "8080:8080"
       - "50000:50000"
     volumes:
       - jenkins-data:/var/jenkins_home
-      - web-content:/mnt/web-content
+      - /home/ubuntu/cicd:/cicd
+      - /var/run/docker.sock:/var/run/docker.sock
 
   nginx:
-    image: nginx
+    build: ./nginx
     restart: on-failure
     ports: 
       - "80:80"
-    volumes:
-      - web-content:/usr/share/nginx/html
 
 volumes:
   jenkins-data:
-  web-content:
