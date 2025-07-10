@@ -1,60 +1,23 @@
-# CI/CD
-Instalação completa de um ambiente de CI/CD
+## 📦 Projeto de CI/CD com Jenkins + GitHub + Nginx via Docker Compose
 
-## Instalação
+### 🛠️ Pré-requisitos
+- Docker e Docker Compose instalados. Para instalar rapidamente, execute:
+  ```bash
+  chmod +x install_docker.sh
+  ./install_docker.sh
+  ```
 
-Siga estas etapas para instalar o ambiente de CI/CD em seu serviidor:
+### ▶️ Execução
+- Inicie os serviços com o comando abaixo:
+  ```bash
+  docker compose up -d --build
+  ```
 
-1. **Clone este repositório:**
-   ```
-   git clone https://github.com/eliezershell/cicd.git
-   ```
+### 🌐 Acesse os serviços:
+- Jenkins: [http://localhost:8080](http://localhost:8080)
+- Nginx: [http://localhost](http://localhost)
 
-2. **Execute o script de instalação:**
-   ```
-   cd cicd; chmod +x install.sh; ./install.sh
-   ```
+----
 
-conteúdo Jenksfile:
-
-```
-pipeline {
-    agent any
-    stages {
-        stage('Preparando o Repositório') {
-            steps {
-                script {
-                    if (currentBuild.number == 1){
-                        sh 'git clone https://github.com/eliezershell/nginx-content.git'   
-                    } else {
-                        sh 'git -C ./nginx-content pull origin main'
-                    }
-                }
-            }
-        }
-        stage('Build e Deploy') {
-            steps {
-                sh '''
-                rm -rf /mnt/web-content/*
-                cp -r /var/jenkins_home/workspace/web-content/nginx-content/* /mnt/web-content
-                '''
-            }
-        }
-    }
-}
-```
-
-Conteúdo do Script na Pipeline:
-
-```
-#!/bin/bash
-
-if [ $BUILD_NUMBER == 1 ]; then
-git clone https://github.com/eliezershell/nginx-content.git
-else
-git -C ./nginx-content pull origin main
-fi
-
-rm -rf /mnt/web-content/*
-cp -r /var/jenkins_home/workspace/web-content/nginx-content/* /mnt/web-content
-```
+⚠️ Observações importantes
+- A Instrução COPY em nginx/Dockerfile deve estar **COMENTADA na execução inicial dos containers**, mas deve ser **DESCOMENTADA quando for executada as builds da pipeline**.

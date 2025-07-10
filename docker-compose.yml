@@ -1,0 +1,20 @@
+services:
+  jenkins:
+    build: ./jenkins
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      - /home/ubuntu/cicd/nginx/nginx-content:/nginx-content
+      - /home/ubuntu/cicd:/cicd
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  nginx:
+    build: ./nginx
+    restart: on-failure
+    ports: 
+      - "80:80"
+
+volumes:
+  jenkins-data:
