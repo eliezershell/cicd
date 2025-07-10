@@ -4,7 +4,6 @@ services:
     restart: on-failure
     ports:
       - "8080:8080"
-      - "50000:50000"
     volumes:
       - jenkins-data:/var/jenkins_home
       - /home/ubuntu/cicd/nginx/nginx-content:/nginx-content
