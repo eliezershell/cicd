@@ -4,7 +4,7 @@ pipeline {
         stage('Clonando o Repositório') {
             steps {
                 script {
-                    if (currentBuild.number == 1){
+                    if (currentBuild.number == 4){
                         sh 'git clone https://github.com/eliezershell/nginx-content.git'
                     } else {
                         sh 'git -C ./nginx-content pull origin main'
