@@ -17,7 +17,7 @@ pipeline {
                 script {
                     sh '''
                         mkdir -p /nginx-content
-			            rm -rf /nginx-content/*
+			rm -rf /nginx-content/*
                         cp -r ./nginx-content/* /nginx-content/
                     '''
                 }
