@@ -1,19 +1,23 @@
-# CI/CD
-Instalação completa de um ambiente de CI/CD
+## 📦 Projeto de CI/CD com Jenkins + GitHub + NGINX via Docker Compose
 
-## Instalação
+### 🛠️ Pré-requisitos
+- Docker e Docker Compose instalados. Para instalar rapidamente, execute:
+  ```bash
+  chmod +x install_docker.sh
+  ./install_docker.sh
+  ```
 
-Siga estas etapas para instalar o ambiente de CI/CD em seu servidor:
+### ▶️ Execução
+- Inicie os serviços com o comando abaixo:
+  ```bash
+  docker compose up -d --build
+  ```
 
-1. **Clone este repositório:**
-   ```
-   git clone https://github.com/eliezershell/cicd.git -b docker-compose
-   ```
-2. **Execute o script de instalação do Docker:**
-   ```
-   chmod +x ./cicd/install_docker.sh && ./cicd/install_docker.sh
-   ```
-3. **Execute o script de inicialização do Docker Compose:**
-   ```
-   cd cicd; sudo docker compose up -d
-   ```
+### 🌐 Acesse os serviços:
+- Jenkins: [http://localhost:8080](http://localhost:8080)
+- NGINX: [http://localhost](http://localhost)
+
+----
+
+⚠️ Observações importantes
+- A Instrução COPY em nginx/Dockerfile deve estar **COMENTADA na execução inicial dos containers**, mas deve ser **DESCOMENTADA quando for executada as builds da pipeline**.
